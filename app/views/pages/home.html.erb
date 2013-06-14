@@ -1,15 +1,19 @@
-<div class="hero-unit">
-	<h1>Welcome Person or Persons of Interest</h1>
+<% if user_signed_in? %>
+<h1>You've Logged In, Well Done.</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome Person or Persons of Interest</h1>
 
-	<p>You've found the home page for 
-		
-		<%= link_to "Find Me a Market", 'http://www.
-			onemonthrails.com'%>
-			App
-	</p>
-	<hr>
+		<p>You've found the home page for 
+			
+			<%= link_to "Find Me a Market", 'http://www.
+				onemonthrails.com'%>
+				App
+		</p>
+		<hr>
 
-	<p> 
-		<%= link_to "Sign Up Now!", "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div
+		<p> 
+			<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div
+<% end %>
